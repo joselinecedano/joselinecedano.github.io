@@ -1,0 +1,27 @@
+/* styling for start  screen */
+.container {
+    height: 100%;
+    width : 100%;  
+    display: flex;
+}
+.menu img{
+   width: 100%;
+}
+.menu h1{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 150px;
+    position: absolute; top: 250px; left: 550px;
+    color: white;
+}
+
+
+/* styling for acutal game screen */
+.game img{
+    height:100%;
+    width: 100%;
+}
+.game .grid img{
+    width:200px;
+    height:200px
+}
+
