@@ -1,27 +1,42 @@
-/* styling for start  screen */
-.container {
+/* styling for start screen */
+img{
     height: 100%;
-    width : 100%;  
-    display: flex;
+    width:100%;
 }
-.menu img{
-   width: 100%;
-}
-.menu h1{
+a{
     font-family: 'Press Start 2P', cursive;
-    font-size: 150px;
-    position: absolute; top: 250px; left: 550px;
-    color: white;
+    text-decoration:none;
+    font-size:80px;
+    color:white;
 }
+h1{
+    position: absolute;top:250px; left: 500px;
 
+}
 
 /* styling for acutal game screen */
-.game img{
-    height:100%;
+audio{
+    position: relative;top: -90px; left:1550px;
+}
+.game {
+    height: 100%;
     width: 100%;
 }
-.game .grid img{
-    width:200px;
-    height:200px
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4,6rem);
+    grid-template-rows: repeat(4,6rem);
+    grid-gap:2rem;
+}
+
+.pokemon{
+    height:70px;
+    width: 70px;
+}
+
+.pokeball{
+    width: 90px;
+    height: 90px;
+    
 }
 
