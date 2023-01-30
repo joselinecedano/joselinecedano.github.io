@@ -10,16 +10,19 @@ a{
     color:white;
 }
 h1{
-    position: absolute;top:250px; left: 500px;
+    position: absolute;
+    top:200px; 
+    left: 500px;
 
 }
 audio{
-    position: relative;top: -130px;left: 1550px;
+    display: flex;
+    float: right;
 }
 
-/* styling for acutal game screen */
+/* styling for actual game screen */
 .gameAudio{
-    position: relative;top: -150px; left:1550px;
+    position: relative;top: -60px;
 }
 .timer{
     height: 60px;
@@ -33,24 +36,39 @@ audio{
     grid-template-columns: repeat(6,8rem);
     grid-template-rows: repeat(3,8rem);
     grid-gap:2rem;
-    position: relative;top: -1150px;left: 500px;
+    position: absolute;top: 230px;left: 500px;
+    /* sets its position relative to the parent which would be the div game but since the div game doesnt have a  postion it goes to its parent which is the body */
+    perspective: 800px;
+    /* perspective adds depth to our element. its the distance from the user to the z-0 plane
+    should be on parent or else it won't work  */
 }
-
+.card{
+    transform-style:preserve-3d ;
+    transition: transform 2s ease;
+    transform: rotateY(0deg);
+    /* placed in actual element we want affected  */
+}
 .pokemon{
     height: 100px;
     width: 100px;
     /* background-color: red; */
+    
 }
 .poke-ball{
     /* background-color: black; */
     position: relative;top:-200px; left: -80px;
     height: 250px;
     width: 255px;
+    backface-visibility: hidden;  
+   /* all html elements have a backface (mirror of the element) , by setting it to hidden it hides the backface of the 
+   element and allows us to see the pokemon behind the pokeballs!*/
 }
 .instructions{
     background-color: black;
     border: white 10px solid;
-     position: relative;top:-400px
+    position: absolute;
+    top:800px;
+    left: 300px;
 }
 p{
     text-align: center;
@@ -59,5 +77,10 @@ p{
     padding:30px;
     font-size: 30px;
 }
+.card :hover{
+    cursor: pointer;
+}
 
-
+.toggleCard{
+    transform: rotateY(180deg);
+}
