@@ -13,30 +13,46 @@ h1{
     position: absolute;top:250px; left: 500px;
 
 }
+audio{
+    position: relative;top: -130px;left: 1550px;
+}
 
 /* styling for acutal game screen */
-audio{
+.gameAudio{
     position: relative;top: -90px; left:1550px;
-}
-.game {
-    height: 100%;
-    width: 100%;
 }
 .grid {
     display: grid;
-    grid-template-columns: repeat(4,6rem);
-    grid-template-rows: repeat(4,6rem);
+    grid-template-columns: repeat(6,8rem);
+    grid-template-rows: repeat(3,8rem);
     grid-gap:2rem;
+    position: relative;top: -1040px;left: 500px;
 }
 
 .pokemon{
-    height:70px;
-    width: 70px;
+    height: 100px;
+    width: 100px;
+    /* background-color: red; */
+}
+.poke-ball{
+    /* background-color: black; */
+    position: relative;top:-200px; left: -80px;
+    height: 250px;
+    width: 255px;
+}
+.instructions{
+    background-color: black;
+    border: white 10px solid;
+     position: relative;top:-350px
+}
+p{
+    text-align: center;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    padding:30px;
+    font-size: 30px;
+    /* margin: 50px; */
+   
 }
 
-.pokeball{
-    width: 90px;
-    height: 90px;
-    
-}
 
