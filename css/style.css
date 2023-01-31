@@ -13,6 +13,7 @@ h1{
     position: absolute;
     top:200px; 
     left: 500px;
+    opacity: 0.9;
 
 }
 audio{
@@ -42,6 +43,10 @@ audio{
     /* perspective adds depth to our element. its the distance from the user to the z-0 plane
     should be on parent or else it won't work  */
 }
+button{
+    background: transparent;
+    border: none;
+}
 .card{
     transform-style:preserve-3d ;
     transition: transform 2s ease;
@@ -56,9 +61,9 @@ audio{
 }
 .poke-ball{
     /* background-color: black; */
-    position: relative;top:-200px; left: -80px;
+    position: relative;top:-200px; left: -85px;
     height: 250px;
-    width: 255px;
+    width: 270px;
     backface-visibility: hidden;  
    /* all html elements have a backface (mirror of the element) , by setting it to hidden it hides the backface of the 
    element and allows us to see the pokemon behind the pokeballs!*/
@@ -81,6 +86,7 @@ p{
     cursor: pointer;
 }
 
-.toggleCard{
+.flip{ 
+    /* will be accessed through my js file to flip cards and show pokemon */
     transform: rotateY(180deg);
 }

@@ -1,63 +1,58 @@
 console.log("Poke-Match")
 
 //Query Selectors
-const card = document.querySelectorAll(".card")
-const face = document.querySelectorAll(".pokemon")
-const back = document.querySelectorAll(".poke-ball")
-
-const cards = Array.of(card)
+const cards = document.querySelectorAll(".card")
 console.log(cards)
 
-//Class for the Game
-class PokeMatch{
-    constructor(){
-        this.cards= 
-        this.matches= matches
-        this.shuffle = shuffle
-        this.flip = flip
-        this.unflip = unflip
-        this.winner = winner
-        this.loser= loser
-        this.timer = timer
-        this.resetGame = resetGame
-        }//Function that checks for matched cards and stores them?
 
-    matches(){ //if the first card we click matched the second card remove event listener
-        if( cards[i]===cards[i]){
-            card.removeEventListener("click")
-        }  else{ //if the cards do not match unflip the cards
-            //this.unflip()
-        }     
+//this stores what the first and second card user chooses in order to check if they matched 
+// let firstPick;
+// let secondPick;
+// //Function that checks for matched cards
+// const checkMatch = () => {
+//     for (let i = 0; i < cards.length; i++){
+//         if(){ //set firstPick to the card user selected 
+//         firstPick = cards[i]
+//         }else{
+//             secondPick= cards[i]
+//         }
+//     if(firstPick.id === secondPick.id){
+//         console.log("Its a match!")
+        
+//     }else {
+//     console.log("They weren't a match!")
+// }
 
-        }//Function that Randomizes/Shuffles Cards
-    shuffle(){
+// }}
+// checkMatch()
+//Function that flips cards 
+// const flip = () => {
+//     for (let i = 0; i < cards.length; i++){
+//         do{
+//             cards[i].classList.toggle("flip")
+//         }while(cards[i].id !== cards[i].id)
+//         if(cards[i].id === cards[i].id){
+//             cards[i].remove("flip")
+//         }
+// }}
+//Function that unflips cards if they're not a match
+   
+//Function for Winner 
 
-        }//Function that flips cards
-    flip(){ 
-       
-        }//Function that unflips cards
-    unflip(){
+//Function for Loser
 
-        }//Function for Winner 
-    winner(){
+//Function for Timer
 
-        }//Function for Loser
-    loser(){
+//Function for Resetting the Game
 
-        }//Function for Timer
-    timer(){
-
-        }//Function for Resetting the Game
-    resetGame(){
-
-    }
-}
+//Function that Randomizes/Shuffles Cards
 
 
 //Event Listeners
-    card.forEach(card => 
-        card.addEventListener("click", ()=>{
-            card.classList.toggle('toggleCard')
-        }
-    )
-)  
+//Event listener for each card that adds flip class 
+ cards.forEach(card => 
+    card.addEventListener("click", ()=>{
+        card.classList.toggle('flip');
+        console.log(card.id)
+    }
+ ))
