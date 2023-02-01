@@ -29,7 +29,7 @@ audio{
     height: 60px;
     width: 100%;
     background: linear-gradient(to left, green,red);
-    position: relative;top:-1050px;
+    position: absolute;top:20px;
 }
 
 .grid {
@@ -37,16 +37,16 @@ audio{
     grid-template-columns: repeat(6,8rem);
     grid-template-rows: repeat(3,8rem);
     grid-gap:2rem;
-    position: absolute;top: 230px;left: 500px;
+    position: relative;top: -850px;left: 400px;
     /* sets its position relative to the parent which would be the div game but since the div game doesnt have a  postion it goes to its parent which is the body */
     perspective: 800px;
     /* perspective adds depth to our element. its the distance from the user to the z-0 plane
     should be on parent or else it won't work  */
 }
-button{
-    background: transparent;
+/* button{
+    background: show;
     border: none;
-}
+} */
 .card{
     transform-style:preserve-3d ;
     transition: transform 2s ease;
@@ -62,7 +62,7 @@ button{
 .poke-ball{
     /* background-color: black; */
     position: relative;top:-200px; left: -85px;
-    height: 250px;
+    height: 150px;
     width: 270px;
     backface-visibility: hidden;  
    /* all html elements have a backface (mirror of the element) , by setting it to hidden it hides the backface of the 

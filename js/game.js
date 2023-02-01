@@ -1,8 +1,45 @@
 console.log("Poke-Match")
 
 //Query Selectors
-const cards = document.querySelectorAll(".card")
-console.log(cards)
+let startBtn = document.querySelector(".start")
+let gameArea = document.querySelector(".grid")
+class PokeMatch {
+    constructor(){
+        this.cards = document.querySelectorAll(".card")
+    }
+    matches(){
+
+
+    }
+}
+
+
+let newGame = new PokeMatch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //this stores what the first and second card user chooses in order to check if they matched 
@@ -50,9 +87,15 @@ console.log(cards)
 
 //Event Listeners
 //Event listener for each card that adds flip class 
- cards.forEach(card => 
+ newGame.cards.forEach(card => 
     card.addEventListener("click", ()=>{
         card.classList.toggle('flip');
-        console.log(card.id)
+        console.log()
     }
  ))
+startBtn.addEventListener("click", ()=>{
+    for (let i = 0; i < newGame.cards.length; i++){
+        let pokemonShuffle = newGame.cards[Math.floor(Math.random()*newGame.cards.length)];
+        gameArea.appendChild(pokemonShuffle)
+        console.log(pokemonShuffle) 
+}})
