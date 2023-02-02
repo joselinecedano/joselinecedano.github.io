@@ -28,8 +28,14 @@ audio{
 .timer{
     height: 60px;
     width: 100%;
-    background: linear-gradient(to left, green,red);
+    background: lightgray;
     position: absolute;top:20px;
+}
+.time {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to left, green,red);
+    position: relative;
 }
 
 .grid {
@@ -62,7 +68,7 @@ audio{
 .poke-ball{
     /* background-color: black; */
     position: relative;top:-200px; left: -85px;
-    height: 150px;
+    height: 250px;
     width: 270px;
     backface-visibility: hidden;  
    /* all html elements have a backface (mirror of the element) , by setting it to hidden it hides the backface of the 

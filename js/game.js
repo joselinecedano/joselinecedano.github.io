@@ -1,19 +1,21 @@
 console.log("Poke-Match")
 
 //Query Selectors
-let startBtn = document.querySelector(".start")
+//let startBtn = document.querySelector(".start")
 let gameArea = document.querySelector(".grid")
-let timer = document.querySelector(".time")
+let timer = document.querySelector(".timer")
+let time = document.querySelector(".time")
 
+let firstPick = false ;
+let firstPokemon = '';
+let secondPick = false;
+let secondPokemon = '';
 
 //Game class
 class PokeMatch {
     constructor(){
         this.cards = document.querySelectorAll(".card");
-        this.firstPick = false ;
-        this.firstPokemon = '';
-        this.secondPick = false;
-        this.secondPokemon = '';
+       
     }
    shuffle(){
     for (let i = 0; i < this.cards.length; i++){
@@ -23,36 +25,54 @@ class PokeMatch {
         console.log(pokemonShuffle) 
         }
     }
-    flipCards(){
-        this.cards.forEach(card => {
-            let card = card.addEventListener("click",()=> {
-                card.classList.add(".flip")
+    timer(){
 
-            })
-        })
-    }
-    checkForMatches(){
-        //if firstPick is false that means a card hasnt been picked yet and will run whats inside
-        if(!firstPick){
-            
-            console.log(firstPick, "first pick")
-        }
  
     }
     reset(){ //maybe?
-        //reset timer
+        // reset timer
         // this.cards.classList.remove("flip")
         // this.firstPick = false 
         // this.firstPokemon = ''
         // this.secondPick = false
         // this.secondPokemon = ''
     }
-     
 }
+
+//New PokeMatch Intantiation 
 let newGame = new PokeMatch
 newGame.shuffle();
-newGame.flipCards();
-newGame.checkForMatches()
+
 
     
+//Event listener for each card that adds flip class
+ newGame.cards.forEach(card =>
+    card.addEventListener("click", flipCards = () => {
+        console.log(card)
+        if(!card.classList.contains("match")){
+        //adds flip class to card chosen
+        card.classList.toggle('flip')
+        if(!firstPick){
+        //sets card chosen as firstPick which we will use to compare to the secondPicks id and see if they match
+        firstPick = card;     
+        firstPokemon = card.getAttribute("id")
+        console.log(firstPokemon,"first pick")
+        }else {
+        //setting second chosen card as players secondPick and getting its id
+        secondPick = card;
+        secondPokemon = card.getAttribute("id")
+        console.log(secondPokemon, "second pick")
+        //if the players firstPick and secondPick match
+        }if(firstPokemon === secondPokemon){
+        console.log("its a match", `${firstPokemon} & ${secondPokemon}`)
+        //add class of match and reset the firstPick to false so player can choose their next two cards 
+        //by adding match i can 
+        firstPick.classList.add("match");
+        secondPick.classList.add("match");
+        firstPick = false;
+        }else {
+        console.log("it's not a match!")
     
+        }
+    }
+}))
