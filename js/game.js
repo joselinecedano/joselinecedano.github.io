@@ -1,10 +1,10 @@
 console.log("Poke-Match")
 
 //Query Selectors
-//let startBtn = document.querySelector(".start")
-let gameArea = document.querySelector(".grid")
-let timer = document.querySelector(".timer")
-let time = document.querySelector(".time")
+let strtButton = document.querySelector(".startGame")
+let gameArea = document.querySelector(".grid")  
+let timer = document.querySelector(".timer");
+let time = document.getElementById("time");
 
 let firstPick = false ;
 let firstPokemon = '';
@@ -15,7 +15,6 @@ let secondPokemon = '';
 class PokeMatch {
     constructor(){
         this.cards = document.querySelectorAll(".card");
-       
     }
    shuffle(){
     for (let i = 0; i < this.cards.length; i++){
@@ -25,39 +24,60 @@ class PokeMatch {
         console.log(pokemonShuffle) 
         }
     }
-    timer(){
-
- 
+    
+    win(){
+        if (this.cards.classList.contains("match")){
+            console.log("You have won Poke-Match")
+            // this.reset() 
+               }
     }
     reset(){ //maybe?
-        // reset timer
-        // this.cards.classList.remove("flip")
-        // this.firstPick = false 
-        // this.firstPokemon = ''
-        // this.secondPick = false
-        // this.secondPokemon = ''
-    }
+    //    this.cards.classList.remove("flip")
+    //    this.cards.classList.remove("match")
+    //    setTimeout
+     }
 }
-
 //New PokeMatch Intantiation 
 let newGame = new PokeMatch
 newGame.shuffle();
 
 
-    
+//Timer for Game 
+ let totalTime = 60
+ let stopTime;
+function timeBar(){
+    time.style.width = (totalTime/ 60) * 100 + "%";
+    if(totalTime == 0){
+            clearInterval(stopTime)
+            alert("Game Over!")
+    }else{
+            totalTime--;
+            console.log(totalTime)
+        }
+}
+
+
 //Event listener for each card that adds flip class
+strtButton.addEventListener("click", ()=> {
+    stopTime = setInterval(timeBar, 1000)
+    strtButton.style.display = "none"
+
+})
  newGame.cards.forEach(card =>
     card.addEventListener("click", flipCards = () => {
         console.log(card)
         if(!card.classList.contains("match")){
+            console.log(!card.classList.contains("match")) // if its false that the card we clicked has flip in its class then run code
         //adds flip class to card chosen
-        card.classList.toggle('flip')
+        card.classList.add('flip')
+        console.log(firstPick)
         if(!firstPick){
         //sets card chosen as firstPick which we will use to compare to the secondPicks id and see if they match
         firstPick = card;     
         firstPokemon = card.getAttribute("id")
         console.log(firstPokemon,"first pick")
-        }else {
+        console.log(firstPick)
+        } else {
         //setting second chosen card as players secondPick and getting its id
         secondPick = card;
         secondPokemon = card.getAttribute("id")
@@ -66,13 +86,16 @@ newGame.shuffle();
         }if(firstPokemon === secondPokemon){
         console.log("its a match", `${firstPokemon} & ${secondPokemon}`)
         //add class of match and reset the firstPick to false so player can choose their next two cards 
-        //by adding match i can 
+        //by adding match i can maybe later access it and check if all the cards have a match then player wins if not player loses 
         firstPick.classList.add("match");
         secondPick.classList.add("match");
         firstPick = false;
         }else {
         console.log("it's not a match!")
-    
+            // let flipBack = setTimeout(() => {
+            //     firstPick.classList.remove("flip")
+            //     secondPick.classList.remove("flip")
+            // }, 900)
         }
     }
 }))

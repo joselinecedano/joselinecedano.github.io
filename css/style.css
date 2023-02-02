@@ -26,14 +26,14 @@ audio{
     position: relative;top: -60px;
 }
 .timer{
-    height: 60px;
+    height: 7%;
     width: 100%;
     background: lightgray;
     position: absolute;top:20px;
 }
-.time {
+#time {
     height: 100%;
-    width: 100%;
+    width: 0%;
     background: linear-gradient(to left, green,red);
     position: relative;
 }
