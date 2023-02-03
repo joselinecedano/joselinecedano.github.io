@@ -31,6 +31,11 @@ class PokeMatch {
             }else{ 
                 console.log("keep going")
             }
+    }lose(){
+            clearInterval(stopTime);
+            alert("Game Over!");
+            strtButton.style.display = "block";
+            window.location.href= "loser.html";
     }
    
 }
@@ -39,21 +44,16 @@ let newGame = new PokeMatch
 newGame.shuffle();
 
 
-
 //Timer for Game 
- let totalTime = 60
+ let totalTime = 90
  let stopTime;
 function timeBar(){
-    time.style.width = (totalTime/ 60) * 100 + "%"; //means 100%
+    time.style.width = (totalTime/ 90) * 100 + "%"; //means 100%
     newGame.win()
     if(totalTime == 0){
-            clearInterval(stopTime);
-            alert("Game Over!");
-            strtButton.style.display = "block";
-            window.location.href= "loser.html";
+           newGame.lose()
     }else{
             totalTime--;
-            
             // console.log(totalTime)
         }
 }
