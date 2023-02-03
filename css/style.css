@@ -84,7 +84,8 @@ audio{
 .poke-ball{
     /* background-color: black; */
     position: relative;top:-200px; left: -85px;
-    height: 150px;
+    height: 250px;
+    /* height: 150px; */
     width: 270px;
     backface-visibility: hidden;  
    /* all html elements have a backface (mirror of the element) , by setting it to hidden it hides the backface of the 

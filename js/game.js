@@ -105,10 +105,7 @@ strtButton.addEventListener("click", ()=> {
         firstPick = false;
         }else {
         console.log("it's not a match!")
-            //    let flipBack = setTimeout(() => {
-            //     firstPick.classList.remove("flip")
-            //     secondPick.classList.remove("flip")
-            // }, 1000)
+
         }
     }
 }))
