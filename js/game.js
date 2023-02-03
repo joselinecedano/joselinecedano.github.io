@@ -25,15 +25,16 @@ class PokeMatch {
     win(){
         if (gameArea.children.length === gameArea.querySelectorAll(".match").length){
             console.log("You have won Poke-Match") 
-            alert("You have won Poke-Match!!")
+            // alert("You have won Poke-Match!!")
             clearInterval(stopTime)
             window.location.href="winner.html"
             }else{ 
                 console.log("keep going")
             }
-    }lose(){
+     }
+    lose(){
             clearInterval(stopTime);
-            alert("Game Over!");
+            // alert("Game Over!");
             strtButton.style.display = "block";
             window.location.href= "loser.html";
     }
