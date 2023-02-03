@@ -10,12 +10,27 @@ a{
     color:white;
 }
 h1{
+    font-family: 'Press Start 2P', cursive;
     position: absolute;
     top:200px; 
     left: 500px;
     opacity: 0.9;
 
 }
+#loser{
+    animation: jump 0.7s ease-in infinite;
+
+}
+/* animate the loser h1 */
+@keyframes jump{
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+}
+
 audio{
     display: flex;
     float: right;
@@ -37,7 +52,12 @@ audio{
     background: linear-gradient(to left, green,red);
     position: relative;
 }
-
+.startBtn, .restartBtn{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    opacity: 0.7;
+    position:relative; top: -40px; left: 400px;
+}
 .grid {
     display: grid;
     grid-template-columns: repeat(6,8rem);
@@ -49,10 +69,6 @@ audio{
     /* perspective adds depth to our element. its the distance from the user to the z-0 plane
     should be on parent or else it won't work  */
 }
-/* button{
-    background: show;
-    border: none;
-} */
 .card{
     transform-style:preserve-3d ;
     transition: transform 2s ease;
@@ -68,7 +84,7 @@ audio{
 .poke-ball{
     /* background-color: black; */
     position: relative;top:-200px; left: -85px;
-    height: 250px;
+    height: 150px;
     width: 270px;
     backface-visibility: hidden;  
    /* all html elements have a backface (mirror of the element) , by setting it to hidden it hides the backface of the 
@@ -88,7 +104,7 @@ p{
     padding:30px;
     font-size: 30px;
 }
-.card :hover{
+.card ,.startBtn, .restartBtn, :hover{
     cursor: pointer;
 }
 
