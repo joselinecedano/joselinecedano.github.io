@@ -1,6 +1,9 @@
 # poke-match
-This is a Pokemon themed card matching game! Players must match all the pokemon before time runs out.
-To create this game...
+<<<<<<< HEAD
+=======
+This is a Pokemon themed card matching game! Players must match all the pokemon before time runs out, but they must match the first card they pick before they can continue. I made this game as a way to bring everything I have learned so far in the SEI course together and to challenge to myself. 
+To create this game I used Javascript, to run and store all of my logic and get my game working, CSS, to style and make my game "pop", and HTML, to structure and build a solid base for my game. I 
+>>>>>>> 1b25115ce5101ce2daf93aaf81a396956ab09ebc
 
 User Stories:
 * When user loads game they hear background music.
@@ -20,4 +23,7 @@ Stretch:
 * Add lives to game. 
   * If user guesses wrong they lose a life.
 * Add animation to win or lose scenarios. 
+
+Game URL: 
+https://joselinecedano.github.io/
 
