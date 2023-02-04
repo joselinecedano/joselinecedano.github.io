@@ -1,6 +1,6 @@
 # poke-match
 This is a Pokemon themed card matching game! Players must match all the pokemon before time runs out.
-To create this game, I will be using...
+To create this game...
 
 User Stories:
 * When user loads game they hear background music.
